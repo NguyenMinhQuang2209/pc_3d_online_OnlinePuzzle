@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speedRate = 1f;
     float _speedXAxis = 0f;
     float _speedYAxis = 0f;
+    float currentJumpTime = 0;
 
     [Space(5)]
     [Header("Rotate")]
@@ -27,6 +28,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float minRotateAngle = -90f;
     private float rotateXAxis = 0f;
     private float rotateYAxis = 0f;
+
+    [Space(5)]
+    [Header("Gravity")]
+    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckDistance = 0.4f;
+    [SerializeField] private LayerMask groundMask;
+    bool isGround;
+    Vector3 velocity;
 
     private void Start()
     {
@@ -44,7 +54,22 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        Gravity();
+    }
 
+    private void Gravity()
+    {
+        isGround = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
+        velocity.y += gravity * Time.deltaTime;
+        if (isGround && velocity.y <= 0f)
+        {
+            velocity.y = -2f;
+            currentJumpTime = 0;
+            animator.SetBool("Jump", false);
+        }
+        animator.SetBool("Fall", !isGround);
+
+        controller.Move(velocity * Time.deltaTime);
     }
 
     public void Movement(Vector2 input)
@@ -103,6 +128,16 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Jump()
     {
-
+        if (currentJumpTime < jumpTime)
+        {
+            currentJumpTime += 1;
+            velocity.y = Mathf.Sqrt(gravity * -2f * jumpHeight);
+            animator.SetBool("Jump", true);
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckDistance);
     }
 }
