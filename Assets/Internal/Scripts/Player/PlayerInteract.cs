@@ -25,6 +25,10 @@ public class PlayerInteract : MonoBehaviour
             if (hit.collider.gameObject.TryGetComponent<Interactible>(out var interact))
             {
                 InteractController.instance.InteractText(interact.promptMessage);
+                if (playerInput.onFoot.Interact.triggered)
+                {
+                    interact.BaseInteract();
+                }
             }
         }
     }
