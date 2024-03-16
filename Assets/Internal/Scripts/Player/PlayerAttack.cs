@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator animator;
     private PlayerInput playerInput;
     [SerializeField] private List<AttackItem> attackItems = new();
+    [SerializeField] private int defaultAttackIndex = 0;
     private AttackItem currentAttack;
     private int currentIndex = 0;
     private float currentTimer = 0f;
@@ -14,18 +15,27 @@ public class PlayerAttack : MonoBehaviour
 
     public static string ATTACK_NAME = "Attack";
     public static string ATTACK_INDEX = "AttackIndex";
+    public static string ATTACK_TYPE = "AttackType";
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<PlayerMovement>().GetAnimator();
-        currentAttack = attackItems[0];
+        currentAttack = attackItems[defaultAttackIndex];
+        if (animator != null)
+        {
+            animator.SetInteger(ATTACK_TYPE, currentAttack.typeIndex);
+        }
     }
     private void Update()
     {
         if (animator == null)
         {
             animator = GetComponent<PlayerMovement>().GetAnimator();
+            if (animator != null)
+            {
+                animator.SetInteger(ATTACK_TYPE, currentAttack.typeIndex);
+            }
             return;
         }
         currentTimeBwtAttack = Mathf.Min(currentTimeBwtAttack + Time.deltaTime, currentAttack.timeBwtAttack);
@@ -63,4 +73,5 @@ public class AttackItem
     public int total = 1;
     public float waitTime = 1f;
     public float timeBwtAttack = 1f;
+    public int typeIndex = 0;
 }

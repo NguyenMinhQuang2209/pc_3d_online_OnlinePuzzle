@@ -2012,10 +2012,13 @@ MonoBehaviour:
     total: 3
     waitTime: 2
     timeBwtAttack: 2
+    typeIndex: 0
   - attackType: 1
     total: 3
     waitTime: 2
     timeBwtAttack: 2
+    typeIndex: 1
+  defaultAttackIndex: 1
 --- !u!1 &5568196912689514727
 GameObject:
   m_ObjectHideFlags: 0
