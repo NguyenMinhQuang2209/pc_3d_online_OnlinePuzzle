@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : NetworkBehaviour
 {
     private Animator animator;
     private PlayerInput playerInput;
@@ -17,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
     public static string ATTACK_INDEX = "AttackIndex";
     public static string ATTACK_TYPE = "AttackType";
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
         playerInput = GetComponent<PlayerInput>();
         animator = GetComponent<PlayerMovement>().GetAnimator();
@@ -29,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void Update()
     {
+        if (!IsOwner) return;
         if (animator == null)
         {
             animator = GetComponent<PlayerMovement>().GetAnimator();

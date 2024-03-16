@@ -1,9 +1,10 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     private CharacterController controller;
     private PlayerInput playerInput;
@@ -41,10 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterConfig characterConfig;
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
-        controller = GetComponent<CharacterController>();
-        playerInput = GetComponent<PlayerInput>();
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -54,9 +53,25 @@ public class PlayerMovement : MonoBehaviour
                 break;
             }
         }
+        if (IsOwner)
+        {
+            mainCamera.Priority = 1;
+            mainCamera.enabled = true;
+            playerInput = GetComponent<PlayerInput>();
+            controller = GetComponent<CharacterController>();
+        }
+        else
+        {
+            mainCamera.Priority = 0;
+            mainCamera.enabled = false;
+        }
     }
     private void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
         Gravity();
     }
 
