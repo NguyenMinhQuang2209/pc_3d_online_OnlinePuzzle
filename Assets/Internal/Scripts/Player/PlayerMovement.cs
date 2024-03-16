@@ -38,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
     bool isGround;
     Vector3 velocity;
 
+
+    private CharacterConfig characterConfig;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject child = transform.GetChild(i).gameObject;
-            if (child.TryGetComponent<Animator>(out animator))
+            if (child.TryGetComponent<Animator>(out animator) && child.TryGetComponent<CharacterConfig>(out characterConfig))
             {
                 break;
             }
@@ -139,5 +142,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckDistance);
+    }
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
+    public CharacterConfig GetCharacterConfig()
+    {
+        return characterConfig;
     }
 }

@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2033138806434270901
 Transform:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4437267364883579070
 Transform:
   m_ObjectHideFlags: 0
@@ -1192,8 +1192,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2948602550139686144}
   serializedVersion: 2
-  m_LocalRotation: {x: -3.5527137e-15, y: 0, z: 5.0487104e-29, w: 1}
-  m_LocalPosition: {x: 1.17175564e-29, y: 0.26879656, z: -5.51e-43}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7617524e-16, y: 0.2752144, z: -0.033507854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1436,7 +1436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6701383897895321024
 Transform:
   m_ObjectHideFlags: 0
@@ -1551,7 +1551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2183009436079625221
 Transform:
   m_ObjectHideFlags: 0
@@ -1691,6 +1691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6006731605895295743}
   - component: {fileID: 5210751636229596431}
+  - component: {fileID: 2434808953695105140}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Untagged
@@ -1741,6 +1742,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2434808953695105140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665952160065827165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157e979f5995e6d4683c77209e809b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHand: {fileID: 2897807719586247037}
+  leftHand: {fileID: 3534946646425047377}
+  head: {fileID: 5832913269602806892}
 --- !u!1 &5125487872894984243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,6 +1867,7 @@ GameObject:
   - component: {fileID: 4734311093307914836}
   - component: {fileID: 3218878057821275245}
   - component: {fileID: 6333607812767015821}
+  - component: {fileID: 4490998501931998591}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1978,6 +1995,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 2
+--- !u!114 &4490998501931998591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557019992669559203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3da5bd0c4bef8b4d93f1e7a63636ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackItems:
+  - attackType: 0
+    total: 3
+    waitTime: 2
+    timeBwtAttack: 2
+  - attackType: 1
+    total: 3
+    waitTime: 2
+    timeBwtAttack: 2
 --- !u!1 &5568196912689514727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,7 +2977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8429852552557419380
 Transform:
   m_ObjectHideFlags: 0
