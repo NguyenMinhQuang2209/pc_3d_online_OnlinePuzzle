@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 331692564281949759}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855692, y: 7.1054274e-15, z: -1.5529402e-22, w: 1}
-  m_LocalPosition: {x: -1.9767114e-21, y: -0.025551796, z: -0.0000001390987}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -134,7 +134,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331692564281949759}
-  m_Mesh: {fileID: 7989168256493872560, guid: 24708603edb1c0641a1b59cd80c27ac5, type: 3}
+  m_Mesh: {fileID: 2922888475994858625, guid: 460740ea0453a90428d42804769a201b, type: 3}
 --- !u!23 &9069913091266850321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -862,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 1631506038692190998}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.522, z: 0}
+  m_LocalPosition: {x: 0, y: 1.64, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 50
     OrthographicSize: 5
-    NearClipPlane: 0.8
+    NearClipPlane: 0.6
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -1929,7 +1929,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.8
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
@@ -1953,7 +1953,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2.5
-  m_Radius: 0.75
+  m_Radius: 0.8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
