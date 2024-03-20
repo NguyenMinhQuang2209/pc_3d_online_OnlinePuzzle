@@ -2013,10 +2013,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6006731605895295743}
   - component: {fileID: 5210751636229596431}
-  - component: {fileID: 2434808953695105140}
   - component: {fileID: 7536931509683009812}
   - component: {fileID: 1643382549645970905}
   - component: {fileID: 8388577981868420155}
+  - component: {fileID: 2434808953695105140}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Untagged
@@ -2069,23 +2069,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2434808953695105140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4665952160065827165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157e979f5995e6d4683c77209e809b1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightHand: {fileID: 2897807719586247037}
-  leftHand: {fileID: 3534946646425047377}
-  head: {fileID: 4761369528846146066}
-  hat: {fileID: 8737912395465587535}
-  head_aim: {fileID: 6295308883626609046}
 --- !u!114 &7536931509683009812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2184,6 +2167,26 @@ MonoBehaviour:
   - m_Rig: {fileID: 7964402665258440636}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &2434808953695105140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665952160065827165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157e979f5995e6d4683c77209e809b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHand: {fileID: 2897807719586247037}
+  leftHand: {fileID: 3534946646425047377}
+  head: {fileID: 4761369528846146066}
+  hat: {fileID: 8737912395465587535}
+  head_aim: {fileID: 6295308883626609046}
+  flashLight: {fileID: 2327392315261110191}
+  hand_hold_rig: {fileID: 7964402665258440636}
+  hand_hold_layer_index: 1
 --- !u!1 &4892963142426808260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,6 +2481,7 @@ GameObject:
   - component: {fileID: 3218878057821275245}
   - component: {fileID: 6333607812767015821}
   - component: {fileID: 4490998501931998591}
+  - component: {fileID: -2960569153083784358}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2681,6 +2685,18 @@ MonoBehaviour:
     timeBwtAttack: 2
     typeIndex: 1
   defaultAttackIndex: 1
+--- !u!114 &-2960569153083784358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557019992669559203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38e2e6c90e129e449e710a3ae8a6cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5568196912689514727
 GameObject:
   m_ObjectHideFlags: 0
