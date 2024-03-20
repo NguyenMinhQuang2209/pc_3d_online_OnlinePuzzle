@@ -53,6 +53,15 @@ public class PlayerMovement : NetworkBehaviour
                 break;
             }
         }
+
+        if (characterConfig != null)
+        {
+            characterConfig.head.gameObject.SetActive(!IsOwner);
+            if (characterConfig.hat != null)
+            {
+                characterConfig.hat.gameObject.SetActive(!IsOwner);
+            }
+        }
         if (IsOwner)
         {
             mainCamera.Priority = 1;
