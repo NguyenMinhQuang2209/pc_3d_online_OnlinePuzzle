@@ -8,4 +8,8 @@ public class CharacterConfig : MonoBehaviour
     public Transform rightHand;
     public Transform leftHand;
     public Transform head;
+
+
+    public Transform head_aim;
+
 }

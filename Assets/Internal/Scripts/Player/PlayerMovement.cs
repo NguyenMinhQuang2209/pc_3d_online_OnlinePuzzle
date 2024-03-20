@@ -73,6 +73,13 @@ public class PlayerMovement : NetworkBehaviour
             return;
         }
         Gravity();
+
+        if (characterConfig != null)
+        {
+            Transform cameraTransform = Camera.main.transform;
+            Vector3 targetPosition = cameraTransform.position + cameraTransform.forward * 3f;
+            characterConfig.head_aim.position = targetPosition;
+        }
     }
 
     private void Gravity()
