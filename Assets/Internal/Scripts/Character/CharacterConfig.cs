@@ -27,7 +27,11 @@ public class CharacterConfig : MonoBehaviour
     public void FlashLightAction(bool v)
     {
         flashLight.SetActive(v);
-        hand_hold_rig.weight = v ? 1f : 0f;
+        HandHoldAction(v);
+    }
+
+    public void HandHoldAction(bool v)
+    {
         animator.SetLayerWeight(hand_hold_layer_index, v ? 1f : 0f);
     }
 }

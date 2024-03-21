@@ -20,6 +20,12 @@ public class PlayerEquipment : NetworkBehaviour
             InteractWithFlashLight(interact);
             interact = !interact;
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            characterConfig.HandHoldAction(interact);
+            interact = !interact;
+        }
     }
     public void InteractWithFlashLight(bool v)
     {
